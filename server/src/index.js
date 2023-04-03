@@ -3,9 +3,13 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+import { userRouter } from './routes/users.js';
+
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+app.use('/auth', userRouter);
 
 dotenv.config({ path: './.env' });
 mongoose.connect(process.env.MONGOOSEKEY);
