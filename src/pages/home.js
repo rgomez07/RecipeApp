@@ -58,13 +58,15 @@ export const Home = () => {
         {recipes.map((recipe) => (
           <li key={recipe._id} className='list1'>
             <div>
+              <div className='buttonAlign'>
+                <button
+                  onClick={() => saveRecipe(recipe._id)}
+                  disabled={isRecipeSaved(recipe._id)}
+                >
+                  {isRecipeSaved(recipe._id) ? 'Saved' : 'Save'}
+                </button>
+              </div>
               <h2>{recipe.name}</h2>
-              <button
-                onClick={() => saveRecipe(recipe._id)}
-                disabled={isRecipeSaved(recipe._id)}
-              >
-                {isRecipeSaved(recipe._id) ? 'Saved' : 'Save'}
-              </button>
             </div>
             <div className='instructions'>
               <p>{recipe.instructions}</p>
