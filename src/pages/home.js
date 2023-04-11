@@ -53,10 +53,10 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Recipes</h1>
+      <h1 className='homeTitle'>Recipes</h1>
       <ul>
         {recipes.map((recipe) => (
-          <li key={recipe._id}>
+          <li key={recipe._id} className='list1'>
             <div>
               <h2>{recipe.name}</h2>
               <button
